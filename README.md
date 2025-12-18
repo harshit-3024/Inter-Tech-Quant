@@ -1,6 +1,26 @@
-# RL Trading System - Complete Guide
 
-### Note : The startegy returns depends on the random selection of days. In some combinations few days with very high return might get included (like day87 in EBX and day104 in EBY) resulting in higher returns in some runs, while lower in other runs in which these days are not included in testing. For different runs change the seed in PARAMS['SEED'] to get different results.
+# Algorithmic-Strategy-Development-on-Multi-Feature-Time-Series
+
+### **4th Place Winning Submission for the Ebullient Securities Quant PS**
+
+This repository contains the code for our 4th place winning submission at the **Inter IIT Tech Meet 14.0**, for the Quantitative Trading problem statement by **Ebullient Securities**.
+
+The project's objective was to develop a profitable, automated trading strategy for two futures contracts (codenamed EBX and EBY). Our solution employs a **Proximal Policy Optimization (PPO)** agent, a state-of-the-art Reinforcement Learning algorithm, to learn optimal trading decisions. The agent is trained on a rich feature set of over 60 technical indicators derived from high-frequency tick data.
+
+The system provides an end-to-end pipeline: from raw data processing and feature engineering to model training, evaluation, and integration with Ebullient's backtesting engine.
+
+### Key Features
+- **Data-Driven Strategy**: The PPO agent learns complex patterns from market data without hard-coded rules.
+- **Rich Feature Set**: Utilizes over 60 technical indicators (RSI, MACD, Bollinger Bands, etc.) to form a comprehensive market view.
+- **End-to-End Pipeline**: Automates data resampling, indicator calculation, training, and testing with simple commands.
+- **Robust Backtesting**: Generates detailed performance reports, equity curves, drawdown charts, and per-trade signal files.
+- **Parallelized Training**: Leverages `stable-baselines3` for efficient, parallel model training, with automatic GPU detection.
+
+---
+
+### A Note on Reproducibility
+The strategy's performance depends on the random train/test split of trading days. Some runs may include outlier days with exceptionally high returns (e.g., day 87 in EBX or day 104 in EBY), leading to higher overall performance. Other splits might yield more moderate returns. To experiment with different splits, change the `SEED` value in the `PARAMS` dictionary.
+
 
 ## Quick Start 
 ### Install Dependencies
@@ -155,6 +175,7 @@ After test:
 ✓ test_trade_plots/ (folder with per-day charts)
 ✓ signals_EBX/ (folder with signal CSVs)
 ```
+
 
 
 
